@@ -20,8 +20,7 @@ pipeline {
         steps {
             echo 'inside git'
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
-                bat '
-                    git config user.email "atkarkedar227@gmail.com"
+                bat 'git config user.email "atkarkedar227@gmail.com"
                     git config user.name "KedarAtkar"
                     BUILD_NUMBER=1.14.1
                     sed -i "s/1.14.2/${BUILD_NUMBER}/g" Kubernetes.yaml
