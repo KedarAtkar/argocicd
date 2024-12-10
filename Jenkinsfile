@@ -7,6 +7,11 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Checkout Code') {
+            steps {
+                echo 'Hello Worlllllllddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd'
+            }
+        }
         stage('Update Deployment File') {
         environment {
             GIT_REPO_NAME = "ArgoCD"
