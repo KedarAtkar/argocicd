@@ -14,16 +14,15 @@ pipeline {
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
-                sh '''
+                bat '
                     git config user.email "atkarkedar227@gmail.com"
                     git config user.name "KedarAtkar"
-                    // BUILD_NUMBER=${BUILD_NUMBER}
                     BUILD_NUMBER=1.14.1
                     sed -i "s/1.14.2/${BUILD_NUMBER}/g" Kubernetes.yaml
                     git add Kubernetes.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
-                '''
+                '
             }
         }
     }
