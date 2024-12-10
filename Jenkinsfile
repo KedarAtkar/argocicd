@@ -19,7 +19,7 @@ pipeline {
         }
         steps {
             echo 'inside git'
-            withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
+            withCredentials([string(credentialsId: 'GitTokenTerraformCICD', variable: 'GITHUB_TOKEN')]) {
                 bat '''git config user.email "atkarkedar227@gmail.com"
                     git config user.name "KedarAtkar"
                     BUILD_NUMBER=1.14.1
