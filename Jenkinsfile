@@ -7,7 +7,7 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Checkout Code') {
+        stage('Checkout Code1') {
             steps {
                 echo "Hello Worllllllldddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
             }
