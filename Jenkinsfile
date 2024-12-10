@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Update Deployment File') {
         environment {
-            GIT_REPO_NAME = "argocicd"
+            GIT_REPO_NAME = "ArgoCD"
             GIT_USER_NAME = "KedarAtkar"
         }
         steps {
