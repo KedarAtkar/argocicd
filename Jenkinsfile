@@ -13,6 +13,7 @@ pipeline {
             GIT_USER_NAME = "KedarAtkar"
         }
         steps {
+            echo 'inside git'
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 bat '
                     git config user.email "atkarkedar227@gmail.com"
@@ -23,6 +24,7 @@ pipeline {
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 '
+            echo 'done with git'
             }
         }
     }
